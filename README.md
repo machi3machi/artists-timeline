@@ -24,7 +24,7 @@ git clone https://github.com/yourusername/artists-directory.github.io.git
 2. ローカルで確認
 ```bash
 # 任意のローカルサーバーを使用
-python -m http.server 8000
+python3 -m http.server 8000
 ```
 
 3. ブラウザで `http://localhost:8000` にアクセス
