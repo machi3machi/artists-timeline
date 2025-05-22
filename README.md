@@ -4,37 +4,62 @@
 
 ## 特徴
 
-- 年代、時代別のタイムラインで芸術家が列挙され、一覧で確認できます
-- 各芸術家それぞれの生没年が確認できます
-- 各芸術家の代表作とその発表年、所蔵場所を確認できます
+* 年代、時代別のタイムラインで芸術家が列挙され、一覧で確認できます
+* 各芸術家それぞれの生没年が確認できます
+* 各芸術家の代表作とその発表年、所蔵場所を確認できます
 
 ## 技術スタック
 
-- HTML5
-- CSS3
-- Mermaid.js (タイムラインの描画)
+* React
+* Vite
+* react-vertical-timeline-component (タイムラインの描画)
+* react-icons (アイコン表示)
 
-## 開発方法
+## 環境設定
+
+### 必要条件
+
+* Node.js (v20以上)
+* npm (v9以上)
+
+### インストール
 
 1. リポジトリをクローン
 ```bash
-git clone https://github.com/yourusername/artists-directory.github.io.git
+git clone https://github.com/machi3machi/artists-timeline.git
+cd artists-timeline
 ```
 
-2. ローカルで確認
+2. 依存パッケージのインストール
 ```bash
-# 任意のローカルサーバーを使用
-python3 -m http.server 8000
+npm install
 ```
 
-3. ブラウザで `http://localhost:8000` にアクセス
+## ローカルでの起動方法
 
-## 今後の開発予定
+開発サーバーを起動するには、以下のコマンドを実行します：
 
-- 芸術家名をリンクにする
-- 芸術家名リンクを押すことで、芸術家独自のタイムライン画面を表示する
-  - 独自のタイムラインには生まれから亡くなるまでの間に発表した作品が発表年、所蔵場所が記述された状態で確認できる
+```bash
+npm run dev
+```
+
+ブラウザで `http://localhost:5173` にアクセスすると、アプリケーションが表示されます。
+
+## ビルド方法
+
+本番環境用のビルドを作成するには、以下のコマンドを実行します：
+
+```bash
+npm run build
+```
+
+ビルドされたファイルは `dist` ディレクトリに生成されます。
+
+## デプロイ
+
+mainブランチへのプッシュ時に、GitHub Actionsによって自動的にビルドとデプロイが行われます。
+デプロイされたサイトは [https://machi3machi.github.io/artists-timeline/](https://machi3machi.github.io/artists-timeline/) で確認できます。
 
 ## ライセンス
 
-MIT License 
+MIT License
