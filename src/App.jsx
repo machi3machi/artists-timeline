@@ -22,7 +22,13 @@ function App() {
   const grouped = groupByEra(artists);
   return (
     <div style={{ background: '#f5f5f5', minHeight: '100vh', padding: '2vw', fontFamily: 'sans-serif' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '2rem', fontSize: 'clamp(1.5rem, 4vw, 2.5rem)' }}>芸術家年表</h1>
+      <h1 style={{ 
+        textAlign: 'center', 
+        marginBottom: '2rem', 
+        fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+        color: '#213547',
+        WebkitTextFillColor: '#213547'
+      }}>芸術家年表</h1>
       <VerticalTimeline>
         {Object.entries(grouped).map(([era, list]) => [
           <VerticalTimelineElement
