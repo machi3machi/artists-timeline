@@ -11,6 +11,7 @@
 ## 技術スタック
 
 * React
+* TypeScript
 * Vite
 * react-vertical-timeline-component (タイムラインの描画)
 * react-icons (アイコン表示)
@@ -21,6 +22,7 @@
 
 * Node.js (v20以上)
 * npm (v9以上)
+* TypeScript (v5以上)
 
 ### インストール
 
