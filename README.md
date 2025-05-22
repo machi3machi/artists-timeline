@@ -59,6 +59,10 @@ npm run build
 
 ## デプロイ
 
+```bash
+npm run deploy
+```
+
 mainブランチへのプッシュ時に、GitHub Actionsによって自動的にビルドとデプロイが行われます。
 デプロイされたサイトは [https://machi3machi.github.io/artists-timeline/](https://machi3machi.github.io/artists-timeline/) で確認できます。
 
