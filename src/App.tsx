@@ -22,6 +22,15 @@ const eraColors: Record<string, string> = {
   '近代〜現代美術': '#ffffcc'
 };
 
+const eraRanges: Record<string, string> = {
+  'ロマネスク・ゴシック期': '約1000〜1400年',
+  'ルネサンス': '約1400〜1600年',
+  'バロック・ロココ期': '約1600〜1800年',
+  '新古典主義・ロマン主義・写実主義': '約1750〜1900年',
+  '印象派・ポスト印象派': '約1860〜1920年',
+  '近代〜現代美術': '約1900年〜現在',
+};
+
 const App: React.FC = () => {
   const grouped = groupByEra(artists);
   return (
@@ -48,7 +57,7 @@ const App: React.FC = () => {
                   boxShadow: '0 3px 0 #ddd'
                 }}
                 contentArrowStyle={{ borderRight: `7px solid ${eraColors[era] || '#eee'}` }}
-                date={era}
+                date={eraRanges[era] || ''}
               >
                 <h2>{era}</h2>
               </VerticalTimelineElement>
