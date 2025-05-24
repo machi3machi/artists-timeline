@@ -56,7 +56,7 @@ const App: React.FC = () => {
                   height: '36px',
                   fontSize: '18px'
                 }}
-                icon={<FaStar size={18} />}
+                icon={<FaStar size={16} />}
                 contentStyle={{ 
                   background: eraColors[era] || '#eee', 
                   color: '#222', 
@@ -84,9 +84,9 @@ const App: React.FC = () => {
                     color: '#fff',
                     width: '36px',
                     height: '36px',
-                    fontSize: '18px'
+                    fontSize: '16px'
                   }}
-                  icon={<FaPaintBrush size={18} />}
+                  icon={<FaPaintBrush size={16} />}
                 >
                   <h3 className="vertical-timeline-element-title">{artist.name}</h3>
                   <h4 className="vertical-timeline-element-subtitle">{artist.country}</h4>
@@ -105,7 +105,7 @@ const App: React.FC = () => {
         .container {
           max-width: 1440px;
           margin: auto;
-          padding: 2rem;
+          padding: 1rem;
           background: #f5f5f5;
           min-height: 100vh;
         }
@@ -140,170 +140,39 @@ const App: React.FC = () => {
 
         h2 {
           margin: 0;
-          font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+          font-size: clamp(1rem, 2vw);
         }
 
         .vertical-timeline-element-title {
-          font-size: clamp(1rem, 2vw, 1.3rem) !important;
-          margin: 0 0 0 !important;
-          text-align: center !important;
+          font-size: clamp(0.5rem, 1vw);
+          margin: 0 0 0;
         }
 
         .vertical-timeline-element-subtitle {
-          font-size: clamp(0.9rem, 1.5vw, 1.1rem) !important;
-          margin: 0 0 0.5rem !important;
-          color: #666 !important;
-          text-align: center !important;
+          font-size: clamp(0.2rem, 1vw);
+          margin: 0 0 0.2rem;
+          color: #666;
         }
 
         .vertical-timeline-element-content p {
-          font-size: clamp(0.9rem, 1.2vw, 1.1rem) !important;
-          margin: 0 !important;
-          line-height: 1.6 !important;
-          text-align: center !important;
+          font-size: clamp(0.9rem, 1.2vw);
+          margin: 0;
+          color: #666;
         }
 
         .vertical-timeline-element-date {
-          font-size: clamp(0.9rem, 1.2vw, 1.1rem) !important;
-          color: #666 !important;
-          font-weight: 500 !important;
+          font-size: clamp(0.9rem, 1.2vw);
+          color: #666;
+          font-weight: 900;
         }
 
-        /* タイムライン要素のスタイル調整 */
-        .vertical-timeline-custom .vertical-timeline-element-icon {
-          z-index: 2;
-          left: 55%;
-          transform: translateX(-50%);
-        }
-
-        .vertical-timeline-custom .vertical-timeline-element-content {
-          z-index: 1;
-        }
-
-        .vertical-timeline-custom .vertical-timeline-element-content::before {
-          z-index: 1;
-        }
-
-        .vertical-timeline-custom .vertical-timeline-element-content::after {
-          z-index: 1;
-        }
-
-        @media (max-width: 1440px) {
-          .container {
-            padding: 1.5rem;
-          }
-        }
-
-        @media (max-width: 1024px) {
-          .container {
-            padding: 1rem;
-          }
-
-          main {
-            padding: 1.5rem;
-          }
-        }
-
-        @media (max-width: 768px) {
+        @media (max-width: 1240px) {
           .container {
             padding: 0.5rem;
           }
 
-          header {
-            padding: 1rem;
-            margin-bottom: 1rem;
-          }
-
-          main {
-            padding: 1rem;
-          }
-
           .vertical-timeline-element-content {
-            padding: 1em 0.5em !important;
-          }
-
-          .vertical-timeline-element-date {
-            font-size: 0.9em !important;
-          }
-
-          .vertical-timeline-element-title,
-          .vertical-timeline-element-subtitle {
-            text-align: center !important;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .container {
-            padding: 0.25rem;
-            max-width: 393px;
-            margin: 0 auto;
-          }
-
-          header {
-            padding: 0.75rem;
-          }
-
-          main {
-            padding: 0.5rem;
-            border-radius: 0;
-            box-shadow: none;
-            max-width: 393px;
-            margin: 0 auto;
-          }
-
-          .vertical-timeline-element-content {
-            padding: 0.75em 0.25em !important;
-            max-width: 360px;
-            margin: 0 auto !important;
-            word-break: break-word;
-            overflow-wrap: break-word;
-          }
-
-          .vertical-timeline-element-date {
-            font-size: 0.95em !important;
-          }
-
-          .vertical-timeline-element-title,
-          .vertical-timeline-element-subtitle {
-            text-align: center !important;
-            font-size: 1em !important;
-            word-break: break-word;
-            overflow-wrap: break-word;
-          }
-
-          .vertical-timeline-element-content p {
-            word-break: break-word;
-            overflow-wrap: break-word;
-            text-align: center !important;
-          }
-
-          h1 {
-            font-size: 1.3rem;
-          }
-          h2 {
-            font-size: 1.1rem;
-          }
-        }
-        
-        @media (max-width: 393px) {
-          .container, main {
-            max-width: 393px;
-            width: 100vw;
-            padding: 0;
-          }
-        }
-
-        @media (max-width: 600px) {
-          .vertical-timeline-custom .vertical-timeline-element-icon {
-            left: 5%;
-            width: 32px !important;
-            height: 32px !important;
-          }
-          .vertical-timeline-element-content {
-            padding: 0.5em 5em !important;
-            min-width: 0 !important;
-            max-width: 85% !important;
-            margin: 0px auto !important;
+            padding: 0.5em 0.5em;
           }
         }
       `}</style>
