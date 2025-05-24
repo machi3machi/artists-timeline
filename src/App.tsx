@@ -49,8 +49,14 @@ const App: React.FC = () => {
           {Object.entries(grouped).map(([era, list]) => (
             <Fragment key={era}>
               <VerticalTimelineElement
-                iconStyle={{ background: eraColors[era] || '#ccc', color: '#fff' }}
-                icon={<FaStar />}
+                iconStyle={{
+                  background: eraColors[era] || '#ccc',
+                  color: '#fff',
+                  width: '36px',
+                  height: '36px',
+                  fontSize: '18px'
+                }}
+                icon={<FaStar size={18} />}
                 contentStyle={{ 
                   background: eraColors[era] || '#eee', 
                   color: '#222', 
@@ -71,15 +77,20 @@ const App: React.FC = () => {
                     color: '#222',
                     boxShadow: '0 3px 0 #ddd'
                   }}
-                  contentArrowStyle={{ borderRight: '7px solid #fff' }}
+                  contentArrowStyle={{ borderRight: '7px solid #eee' }}
                   date={artist.date}
-                  iconStyle={{ background: artist.iconColor, color: '#fff' }}
-                  icon={<FaPaintBrush />}
+                  iconStyle={{
+                    background: artist.iconColor,
+                    color: '#fff',
+                    width: '36px',
+                    height: '36px',
+                    fontSize: '18px'
+                  }}
+                  icon={<FaPaintBrush size={18} />}
                 >
                   <h3 className="vertical-timeline-element-title">{artist.name}</h3>
                   <h4 className="vertical-timeline-element-subtitle">{artist.country}</h4>
                   <p>{artist.work}</p>
-                  <p>{artist.workInfo}</p>
                 </VerticalTimelineElement>
               ))}
             </Fragment>
@@ -161,6 +172,8 @@ const App: React.FC = () => {
         /* タイムライン要素のスタイル調整 */
         .vertical-timeline-custom .vertical-timeline-element-icon {
           z-index: 2;
+          left: 55%;
+          transform: translateX(-50%);
         }
 
         .vertical-timeline-custom .vertical-timeline-element-content {
@@ -277,6 +290,20 @@ const App: React.FC = () => {
             max-width: 393px;
             width: 100vw;
             padding: 0;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .vertical-timeline-custom .vertical-timeline-element-icon {
+            left: 5%;
+            width: 32px !important;
+            height: 32px !important;
+          }
+          .vertical-timeline-element-content {
+            padding: 0.5em 5em !important;
+            min-width: 0 !important;
+            max-width: 85% !important;
+            margin: 0px auto !important;
           }
         }
       `}</style>
