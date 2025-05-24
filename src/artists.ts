@@ -11,7 +11,7 @@ export const artists: Artist[] = [
   // ロマネスク・ゴシック期
   {
     name: "ジスルベルトゥス",
-    date: "1120s - 1130s",
+    date: "1120 - 1130",
     country: "フランス",
     work: "最後の審判（1130年頃、オータン大聖堂）",
     era: "ロマネスク・ゴシック期",
@@ -19,7 +19,7 @@ export const artists: Artist[] = [
   },
   {
     name: "ヴィリギスのモザイク職人",
-    date: "約1200年",
+    date: "約1200",
     country: "神聖ローマ帝国",
     work: "マインツ大聖堂の装飾（1200年頃）",
     era: "ロマネスク・ゴシック期",
