@@ -104,7 +104,7 @@ const App: React.FC = () => {
       <style>{`
         .container {
           max-width: 1440px;
-          margin: 0 auto;
+          margin: auto;
           padding: 2rem;
           background: #f5f5f5;
           min-height: 100vh;
@@ -112,8 +112,8 @@ const App: React.FC = () => {
 
         header {
           text-align: center;
-          margin-bottom: 2rem;
-          padding: 1.5rem;
+          margin-bottom: 1rem;
+          padding: 1rem;
           background: white;
           border-radius: 8px;
           box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -121,19 +121,19 @@ const App: React.FC = () => {
 
         h1 {
           margin: 0;
-          font-size: clamp(1.5rem, 4vw, 2.5rem);
+          font-size: clamp(1rem, 10vw, 1.5rem);
           color: #213547;
         }
 
         header p {
-          margin: 1rem 0 0;
+          margin: 0.5rem 0 0;
           color: #666;
-          font-size: clamp(0.9rem, 2vw, 1.1rem);
+          font-size: clamp(0.3rem, 2vw, 0.8rem);
         }
 
         main {
           background: white;
-          padding: 2rem;
+          padding: 0.5rem;
           border-radius: 8px;
           box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
@@ -145,7 +145,7 @@ const App: React.FC = () => {
 
         .vertical-timeline-element-title {
           font-size: clamp(1rem, 2vw, 1.3rem) !important;
-          margin: 0 0 0.5rem !important;
+          margin: 0 0 0 !important;
           text-align: center !important;
         }
 
