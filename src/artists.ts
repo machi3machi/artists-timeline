@@ -13,8 +13,7 @@ export const artists: Artist[] = [
     name: "ジスルベルトゥス",
     date: "1120s - 1130s",
     country: "フランス",
-    work: "最後の審判",
-    workInfo: "1130年頃、オータン大聖堂",
+    work: "最後の審判（1130年頃、オータン大聖堂）",
     era: "ロマネスク・ゴシック期",
     iconColor: "#b3cde0"
   },
