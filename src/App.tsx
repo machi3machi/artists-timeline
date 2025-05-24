@@ -44,6 +44,7 @@ const App: React.FC = () => {
           layout="2-columns"
           lineColor="#ddd"
           animate={true}
+          className="vertical-timeline-custom"
         >
           {Object.entries(grouped).map(([era, list]) => (
             <Fragment key={era}>
@@ -66,7 +67,7 @@ const App: React.FC = () => {
                   key={era + idx}
                   className="vertical-timeline-element--work"
                   contentStyle={{ 
-                    background: '#fff', 
+                    background: '#f7f7fa', 
                     color: '#222',
                     boxShadow: '0 3px 0 #ddd'
                   }}
@@ -78,6 +79,7 @@ const App: React.FC = () => {
                   <h3 className="vertical-timeline-element-title">{artist.name}</h3>
                   <h4 className="vertical-timeline-element-subtitle">{artist.country}</h4>
                   <p>{artist.work}</p>
+                  <p>{artist.workInfo}</p>
                 </VerticalTimelineElement>
               ))}
             </Fragment>
@@ -133,24 +135,44 @@ const App: React.FC = () => {
         .vertical-timeline-element-title {
           font-size: clamp(1rem, 2vw, 1.3rem) !important;
           margin: 0 0 0.5rem !important;
+          text-align: center !important;
         }
 
         .vertical-timeline-element-subtitle {
           font-size: clamp(0.9rem, 1.5vw, 1.1rem) !important;
           margin: 0 0 0.5rem !important;
           color: #666 !important;
+          text-align: center !important;
         }
 
         .vertical-timeline-element-content p {
           font-size: clamp(0.9rem, 1.2vw, 1.1rem) !important;
           margin: 0 !important;
           line-height: 1.6 !important;
+          text-align: center !important;
         }
 
         .vertical-timeline-element-date {
           font-size: clamp(0.9rem, 1.2vw, 1.1rem) !important;
           color: #666 !important;
           font-weight: 500 !important;
+        }
+
+        /* タイムライン要素のスタイル調整 */
+        .vertical-timeline-custom .vertical-timeline-element-icon {
+          z-index: 2;
+        }
+
+        .vertical-timeline-custom .vertical-timeline-element-content {
+          z-index: 1;
+        }
+
+        .vertical-timeline-custom .vertical-timeline-element-content::before {
+          z-index: 1;
+        }
+
+        .vertical-timeline-custom .vertical-timeline-element-content::after {
+          z-index: 1;
         }
 
         @media (max-width: 1440px) {
@@ -193,13 +215,15 @@ const App: React.FC = () => {
 
           .vertical-timeline-element-title,
           .vertical-timeline-element-subtitle {
-            text-align: left !important;
+            text-align: center !important;
           }
         }
 
         @media (max-width: 480px) {
           .container {
             padding: 0.25rem;
+            max-width: 393px;
+            margin: 0 auto;
           }
 
           header {
@@ -207,11 +231,52 @@ const App: React.FC = () => {
           }
 
           main {
-            padding: 0.75rem;
+            padding: 0.5rem;
+            border-radius: 0;
+            box-shadow: none;
+            max-width: 393px;
+            margin: 0 auto;
           }
 
           .vertical-timeline-element-content {
             padding: 0.75em 0.25em !important;
+            max-width: 360px;
+            margin: 0 auto !important;
+            word-break: break-word;
+            overflow-wrap: break-word;
+          }
+
+          .vertical-timeline-element-date {
+            font-size: 0.95em !important;
+          }
+
+          .vertical-timeline-element-title,
+          .vertical-timeline-element-subtitle {
+            text-align: center !important;
+            font-size: 1em !important;
+            word-break: break-word;
+            overflow-wrap: break-word;
+          }
+
+          .vertical-timeline-element-content p {
+            word-break: break-word;
+            overflow-wrap: break-word;
+            text-align: center !important;
+          }
+
+          h1 {
+            font-size: 1.3rem;
+          }
+          h2 {
+            font-size: 1.1rem;
+          }
+        }
+        
+        @media (max-width: 393px) {
+          .container, main {
+            max-width: 393px;
+            width: 100vw;
+            padding: 0;
           }
         }
       `}</style>
